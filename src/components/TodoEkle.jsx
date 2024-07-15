@@ -3,6 +3,17 @@ import React, { useState } from "react";
 const TodoEkle = ({ doing, setDoing }) => {
     const [button, setButton] = useState(true);
 
+    const [text, setText] = useState("");
+    const [day, setDay] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setDoing([...doing, { id: 7, text: text, day: day, isDone: false }]);
+
+        setText("");
+        setDay("");
+    };
+
     return (
         <div>
             <header>
@@ -17,16 +28,26 @@ const TodoEkle = ({ doing, setDoing }) => {
             </header>
 
             {button && (
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="formControl">
                         <label htmlFor="text">Task</label>
-                        <input type="text" id="text" />
+                        <input
+                            type="text"
+                            id="text"
+                            onChange={(e) => setText(e.target.value)}
+                        />
                     </div>
                     <div className="formControl">
                         <label htmlFor="day">Day&Time</label>
-                        <input type="datetime-local" id="day" />
+                        <input
+                            type="datetime-local"
+                            id="day"
+                            onChange={(e) => setDay(e.target.value)}
+                        />
                     </div>
-                    <button className="btn btn-submit">SUBMIT</button>
+                    <button type="submit" className="btn btn-submit">
+                        SUBMIT
+                    </button>
                 </form>
             )}
         </div>
