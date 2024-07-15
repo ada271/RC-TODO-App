@@ -8,7 +8,7 @@ const TodoEkle = ({ doing, setDoing }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setDoing([...doing, { id: 7, text: text, day: day, isDone: false }]);
+        setDoing([...doing, { id: doing.length, text: text, day: day, isDone: false }]);
 
         setText("");
         setDay("");
