@@ -11,8 +11,8 @@ const TodoGoster = ({ doing, setDoing }) => {
                     <h3>
                         {x.text}
                         <div>
-                            <MdDeleteForever/>
-                            <FaCheckCircle/>
+                            <FaCheckCircle style={{color:"red", fontSize:"20px"}}/>
+                            <MdDeleteForever style={{color:"red", fontSize:"25px"}} />
                             {/* ikonlar */}
                         </div>
                     </h3>
