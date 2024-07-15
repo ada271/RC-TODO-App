@@ -35,6 +35,7 @@ const TodoEkle = ({ doing, setDoing }) => {
                             type="text"
                             id="text"
                             onChange={(e) => setText(e.target.value)}
+                            value={text}
                         />
                     </div>
                     <div className="formControl">
@@ -43,6 +44,7 @@ const TodoEkle = ({ doing, setDoing }) => {
                             type="datetime-local"
                             id="day"
                             onChange={(e) => setDay(e.target.value)}
+                            value={day}
                         />
                     </div>
                     <button type="submit" className="btn btn-submit">
